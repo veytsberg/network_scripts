@@ -1,7 +1,8 @@
-from netmiko import ConnectHandler
-from getpass import getpass
 import time
 from netmiko import ConnectHandler
+from getpass import getpass
+from netmiko import ConnectHandler
+
 
 def test_connection(main_connection, logfile):
     with ConnectHandler(**device) as test_conn:
@@ -10,6 +11,7 @@ def test_connection(main_connection, logfile):
         logfile.write(f'{test_out}\n')
         main_connection.disconnect()
         return test_out
+
 
 def radius_change(ip_file, new_cfg_file, rollback_file):
     with open(ip_file) as f:
